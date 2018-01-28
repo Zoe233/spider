@@ -1,6 +1,3 @@
-# spider
-different spiders
-
 # resovleWeb.py
 目标爬取网站：http://ypk.familydoctor.com.cn/factory_11255_0_0_0_1_1.html
 这个网站是 阿斯利康制药有限公司的药品大全，总共2页，共26个药品。

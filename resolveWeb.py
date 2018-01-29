@@ -251,11 +251,13 @@ class getUrls(object):
 
     def run(self):
         self.__mkDir()
-        # self.__getIntroduction()  ## 开发期间是单步执行的，已经完成，可以不用再执行，当然覆盖结果由于是追加模式，所以要变更说明书的名称。
-        # self.__getGeneral() # 开发期间是单步执行的，已经完成，可以不用再执行，当然覆盖结果再来也ok
-        # self.__getPic() # 开发期间是单步执行的，已经完成，可以不用再执行，当然覆盖结果再来也ok
+        self.__getIntroduction()  ## 开发期间是单步执行的，已经完成，可以不用再执行，当然覆盖结果由于是追加模式，所以要变更说明书的名称。
+        self.__getGeneral() # 开发期间是单步执行的，已经完成，可以不用再执行，当然覆盖结果再来也ok
+        self.__getPic() # 开发期间是单步执行的，已经完成，可以不用再执行，当然覆盖结果再来也ok
         # self.__removeFile() # 用来批量删除不要的文件
-
+        # 注意，self.__getIntroduction(),self.__getGeneral(),self.__getPic()一定要同时执行，否则会导致目标文件夹中的图片，说明书和概述不匹配。
+        # 出现的原因在于self.href_src是在每次类实例化时生成的，每次生成的字典都不一样，key-value不是每次都一样，分开执行一定会导致错误。
+       
 
 if __name__== '__main__':
     g = getUrls()
